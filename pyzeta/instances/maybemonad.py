@@ -1,6 +1,6 @@
 
-from pyz.datatypes.maybe import Maybe, Just, Nothing, fold
-from pyz.typeclasses.monad import Monad
+from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
+from pyzeta.typeclasses.monad import Monad
 
 class MaybeMonad(Monad):
     type = Maybe

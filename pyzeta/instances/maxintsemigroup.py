@@ -1,4 +1,4 @@
-from pyz.typeclasses.semigroup import Semigroup
+from pyzeta.typeclasses.semigroup import Semigroup
 
 class MaxSemigroup(Semigroup):
     type = int

@@ -1,8 +1,8 @@
 
-from pyz.datatypes.maybe import Maybe, Just, Nothing, fold
-from pyz.typeclasses.applicative import Applicative
-from pyz.typeclasses.functor import fmap
-from pyz.instances.maybefunctor import MaybeFunctor
+from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
+from pyzeta.typeclasses.applicative import Applicative
+from pyzeta.typeclasses.functor import fmap
+from pyzeta.instances.maybefunctor import MaybeFunctor
 
 class MaybeApplicative(Applicative):
     type = Maybe

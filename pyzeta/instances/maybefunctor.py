@@ -1,8 +1,8 @@
 
 from toolz import compose
 
-from pyz.typeclasses.functor import Functor
-from pyz.datatypes.maybe import Maybe, Just, Nothing, fold
+from pyzeta.typeclasses.functor import Functor
+from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
 
 class MaybeFunctor(Functor):
     type = Maybe

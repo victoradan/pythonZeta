@@ -1,7 +1,7 @@
 from setuptools import setup
 from setuptools import find_packages
 
-setup(name='pythonZeta',
+setup(name='pyZeta',
       description='FP for Python',
       long_description='FP for Python',
       version='0.0.1',

@@ -1,6 +1,6 @@
-from pyz.datatypes.maybe import *
-from pyz.instances import *
-from pyz.typeclasses.functor import fmap
+from pyzeta.datatypes.maybe import *
+from pyzeta.instances import *
+from pyzeta.typeclasses.functor import fmap
 
 
 def test_fmap():

@@ -1,5 +1,5 @@
-from pyz.instances import *
-from pyz.typeclasses.monad import bind
+from pyzeta.instances import *
+from pyzeta.typeclasses.monad import bind
 
 
 def test_bind_list():

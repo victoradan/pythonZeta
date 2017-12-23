@@ -1,7 +1,7 @@
 
-from pyz.datatypes.maybe import Maybe, Nothing, Just
-from pyz.instances import *
-from pyz.typeclasses.applicative import app
+from pyzeta.datatypes.maybe import Maybe, Nothing, Just
+from pyzeta.instances import *
+from pyzeta.typeclasses.applicative import app
 
 
 def test_app_maybe_just_just():

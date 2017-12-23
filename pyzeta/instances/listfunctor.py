@@ -1,4 +1,4 @@
-from pyz.typeclasses.functor import Functor
+from pyzeta.typeclasses.functor import Functor
 
 class ListFunctor(Functor):
     type = list

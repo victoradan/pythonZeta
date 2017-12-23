@@ -1,4 +1,4 @@
-from pyz.typeclasses.monad import Monad
+from pyzeta.typeclasses.monad import Monad
 
 class ListMonad(Monad):
     type = list
