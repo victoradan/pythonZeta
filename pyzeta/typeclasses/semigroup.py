@@ -1,5 +1,7 @@
+
 from .typeclassmeta import TypeClass
 from ..infix import Infix
+from pyzeta.registry import get_instance_cls
 
 class Semigroup(TypeClass):
 
@@ -8,7 +10,9 @@ class Semigroup(TypeClass):
         raise NotImplementedError()
 
 def _mappend(x, y):
-    return Semigroup.getClassInstance(type(x)).mappend(x, y)
+    instance_cls = get_instance_cls('Semigroup', type(x))
+    return instance_cls.mappend(x, y)
+    #return Semigroup.getClassInstance(type(x)).mappend(x, y)
 
 mappend = Infix(_mappend)
 

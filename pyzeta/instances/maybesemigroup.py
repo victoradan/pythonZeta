@@ -1,8 +1,9 @@
 from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
 from pyzeta.typeclasses.semigroup import Semigroup, mappend
 
+from pyzeta.registry import register
+
 class MaybeSemigroup(Semigroup):
-    type = Maybe
 
     @staticmethod
     def mappend(x, y):
@@ -13,7 +14,4 @@ class MaybeSemigroup(Semigroup):
         # is_just = lambda v: Just (x |mappend| y)
         # return fold(x, is_nothing, is_just)
 
-        # Nothing `mappend` m = m
-        # m `mappend` Nothing = m
-        # Just m1 `mappend` Just m2 = Just (m1 `mappend` m2)
-
+register('Semigroup', Maybe, MaybeSemigroup)

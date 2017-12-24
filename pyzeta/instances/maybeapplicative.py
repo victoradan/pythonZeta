@@ -3,9 +3,9 @@ from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
 from pyzeta.typeclasses.applicative import Applicative
 from pyzeta.typeclasses.functor import fmap
 from pyzeta.instances.maybefunctor import MaybeFunctor
+from pyzeta.registry import register
 
 class MaybeApplicative(Applicative):
-    type = Maybe
 
     @staticmethod
     def app(fab, ma):
@@ -17,3 +17,4 @@ class MaybeApplicative(Applicative):
     def pure(a):
         return  Maybe(a)
 
+register('Applicative', Maybe, MaybeApplicative)

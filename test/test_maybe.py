@@ -10,8 +10,3 @@ def test_maybe_semigroup_just_nothing():
 def test_maybe_semigroup_just_just():
     r = Just("abc") |mappend| Just("def")
     assert r == Just("abcdef")
-
-def test_bla():
-    from pyzeta.typeclasses.semigroup import Semigroup
-    import pprint
-    pprint.pprint(Semigroup.registry)

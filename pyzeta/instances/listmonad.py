@@ -1,7 +1,7 @@
 from pyzeta.typeclasses.monad import Monad
+from pyzeta.registry import register
 
 class ListMonad(Monad):
-    type = list
 
     @staticmethod
     def bind(ma, f):
@@ -15,3 +15,4 @@ class ListMonad(Monad):
     def pure(a):
         return [a]
 
+register('Monad', list, ListMonad)
