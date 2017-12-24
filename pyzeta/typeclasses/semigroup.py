@@ -1,9 +1,14 @@
 from .typeclassmeta import TypeClass
+from ..infix import Infix
 
 class Semigroup(TypeClass):
-    type: object = object()
 
     @staticmethod
-    def append(x, y):
+    def mappend(x, y):
         raise NotImplementedError()
+
+def _mappend(x, y):
+    return Semigroup.getClassInstance(type(x)).mappend(x, y)
+
+mappend = Infix(_mappend)
 

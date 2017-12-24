@@ -9,10 +9,6 @@ class Monad(TypeClass):
     def bind(ma, f):
         raise NotImplementedError()
 
-    # @staticmethod
-    # def pure(a):
-        # raise NotImplementedError()
-
 def _bind(ma, f):
     return Monad.getClassInstance(type(ma)).bind(ma, f)
 

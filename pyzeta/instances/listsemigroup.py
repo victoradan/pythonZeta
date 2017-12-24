@@ -1,9 +1,9 @@
 from pyzeta.typeclasses.semigroup import Semigroup
 
-class MaxSemigroup(Semigroup):
-    type = int
+class ListSemigroup(Semigroup):
+    type = list
 
     @staticmethod
     def mappend(x, y):
-        return max(x, y)
+        return x + y
 

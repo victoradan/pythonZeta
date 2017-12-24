@@ -22,5 +22,4 @@ class TypeClass(metaclass=TypeClassMeta):
         for k, v in cls.registry.items():
             if v == t and (isinstance(k(), cls)):
                 return k
-
     

@@ -1,3 +1,6 @@
+"""
+Source: https://github.com/ActiveState/code/blob/master/recipes/Python/384122_Infix_operators/recipe-384122.py
+"""
 
 class Infix:
 
