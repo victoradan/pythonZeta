@@ -1,3 +1,6 @@
+from hypothesis import given
+import hypothesis.strategies as st
+
 from pyzeta.datatypes.maybe import Just, Nothing, Maybe
 from pyzeta.typeclasses.semigroup import mappend
 from pyzeta.typeclasses.functor import fmap
@@ -7,13 +10,20 @@ from pyzeta.instances.maybeapplicative import MaybeApplicative
 
 ## Semigroup ##
 
-def test_maybe_semigroup_just_nothing():
-    r = Just("abc") |mappend| Nothing
-    assert r == Just("abc")
+@given(st.text())
+def test_maybe_semigroup_just_nothing(s):
+    r = Just(s) |mappend| Nothing
+    assert r == Just(s)
 
-def test_maybe_semigroup_just_just():
-    r = Just("abc") |mappend| Just("def")
-    assert r == Just("abcdef")
+@given(st.text())
+def test_maybe_semigroup_nothing_just(s):
+    r = Nothing |mappend| Just(s)
+    assert r == Just(s)
+
+@given(st.text(), st.text())
+def test_maybe_semigroup_just_just(s1, s2):
+    r = Just(s1) |mappend| Just(s2)
+    assert r == Just(s1 + s2)
 
 ## Functor ##
 
