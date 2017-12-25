@@ -3,11 +3,12 @@ instance_registry looks like:
 {
     'Semigroup': {
                     Number: NumberSemigroup,
-                    Maybe: MaybeSemigroup
+                    Maybe:  MaybeSemigroup
+                    list:   ListSemigroup,
                 },
     'Monoid': {
         Number: NumberMonoid,
-        Maybe: MaybeMonoid,
+        Maybe:  MaybeMonoid,
     }
 }
 """

@@ -1,4 +1,3 @@
-
 from pyzeta.datatypes.maybe import Maybe, Just, Nothing, fold
 from pyzeta.typeclasses.applicative import Applicative
 from pyzeta.typeclasses.functor import fmap
