@@ -1,7 +1,13 @@
 from pyzeta.typeclasses.applicative import app
 from pyzeta.typeclasses.functor import fmap
 from pyzeta.typeclasses.monad import bind
+from pyzeta.typeclasses.monoid import mempty
 
+
+## Monoid ##
+
+def test_mempty_list():
+    assert mempty(list) == []
 
 ## Functor ##
 

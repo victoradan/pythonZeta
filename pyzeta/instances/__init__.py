@@ -1,6 +1,7 @@
 from .listapplicative import ListApplicative
 from .listfunctor import ListFunctor
 from .listmonad import ListMonad
+from .listmonoid import ListMonoid
 from .listsemigroup import ListSemigroup
 from .maybeapplicative import MaybeApplicative
 from .maybefunctor import MaybeFunctor
