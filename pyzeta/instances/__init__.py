@@ -7,3 +7,4 @@ from .maybefunctor import MaybeFunctor
 from .maybemonad import MaybeMonad
 from .maybesemigroup import MaybeSemigroup
 from .stringsemigroup import StringSemigroup
+from .stringmonoid import StringMonoid

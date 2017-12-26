@@ -12,7 +12,6 @@ class Semigroup(TypeClass):
 def _mappend(x, y):
     instance_cls = get_instance_cls('Semigroup', type(x))
     return instance_cls.mappend(x, y)
-    #return Semigroup.getClassInstance(type(x)).mappend(x, y)
 
 mappend = Infix(_mappend)
 
