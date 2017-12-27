@@ -7,7 +7,7 @@ from pyzeta.typeclasses.semigroup import mappend
 
 @given(st.text(), st.text(), st.text())
 def test_associativity(x, y, z):
-    assert associativity(x, y, z)
+    assert_associativity(x, y, z)
 
-def associativity(x, y, z):
-    return ((x |mappend| y) |mappend| z) == (x |mappend| (y |mappend| z))
+def assert_associativity(x, y, z):
+    assert ((x |mappend| y) |mappend| z) == (x |mappend| (y |mappend| z))

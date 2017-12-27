@@ -7,11 +7,11 @@ from pyzeta.typeclasses.monoid import mempty
 ## Associativity ##
 
 def test_mempty():
-    assert left_identity("abc")
-    assert right_identity("abc")
+    assert_left_identity("abc")
+    assert_right_identity("abc")
 
-def left_identity(y):
-    return (mempty(str) |mappend| y) == y
+def assert_left_identity(y):
+    assert (mempty(str) |mappend| y) == y
 
-def right_identity(x):
-    return (x |mappend| mempty(str)) == x
+def assert_right_identity(x):
+    assert (x |mappend| mempty(str)) == x
