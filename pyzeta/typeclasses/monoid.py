@@ -16,7 +16,6 @@ class Monoid(TypeClass):
         raise NotImplementedError()
 
 def mempty(t):
-    instance_cls = get_instance_cls('Monoid', t)
-    return instance_cls.mempty()
+    return get_instance_cls('Monoid', t).mempty()
 
 
