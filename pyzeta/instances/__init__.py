@@ -9,3 +9,7 @@ from .maybemonad import MaybeMonad
 from .maybesemigroup import MaybeSemigroup
 from .stringsemigroup import StringSemigroup
 from .stringmonoid import StringMonoid
+from .eithersemigroup import EitherSemigroup
+from .eitherfunctor import EitherFunctor
+from .eitherapplicative import EitherApplicative
+from .eithermonad import EitherMonad

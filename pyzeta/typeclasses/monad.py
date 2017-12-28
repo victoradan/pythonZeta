@@ -1,4 +1,3 @@
-
 from .typeclassmeta import TypeClass
 from ..infix import Infix
 

@@ -3,7 +3,6 @@ from ..infix import Infix
 from pyzeta.registry import get_instance_cls
 
 class Functor(TypeClass):
-    type: object = object()
 
     @staticmethod
     def fmap(f, fa):
