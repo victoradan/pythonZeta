@@ -11,7 +11,7 @@ setup(name='pyZeta',
       license='MIT',
       platforms=['linux', 'osx'],
       packages=find_packages(),
-      install_requires=[],
+      install_requires=['toolz==0.9.0'],
       tests_require=[],
       classifiers=[
           'Operating System :: MacOS :: MacOS X',
