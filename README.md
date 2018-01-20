@@ -56,27 +56,29 @@ Applicative is a Functor that introduces two functions:
 #### Laws
 Identity
 
-    `f identity |app| fa == fa`
+- `f identity |app| fa == fa`
 
 Homomorphism
-    `pure(g) |app| pure(a) == pure(g(a))`
+- `pure(g) |app| pure(a) == pure(g(a))`
 
 Derived map
-    `g |fmap| fa == pure(g) |app| fa`
+- `g |fmap| fa == pure(g) |app| fa`
 
 Composition
-    ```
-    comp_func = lambda bc: lambda ab: compose(bc, ab) 
-    lhs = fbc |app| (fab |app| fa)
-    rhs = (comp_func |fmap| fbc)  |app| fab |app| fa
-    lhs == rhs
-    ```
+
+```
+comp_func = lambda bc: lambda ab: compose(bc, ab) 
+lhs = fbc |app| (fab |app| fa)
+rhs = (comp_func |fmap| fbc)  |app| fab |app| fa
+lhs == rhs
+```
+
 Interchange
-  `fg |app| pure(a) == pure(lambda ff: ff(a)) |app| fg`
+- `fg |app| pure(a) == pure(lambda ff: ff(a)) |app| fg`
 
 ### Monad
 The Monad introduced the `bind` operator the the Applicative:
 
-   `|bind| :: m a -> (a -> m b) -> m b`
+- `|bind| :: m a -> (a -> m b) -> m b`
 
 
