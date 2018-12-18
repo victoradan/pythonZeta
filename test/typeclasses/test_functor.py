@@ -1,4 +1,4 @@
-from toolz import identity, compose
+from toolz import identity, compose, curry
 
 from hypothesis import given
 import hypothesis.strategies as st
@@ -16,6 +16,12 @@ def test_functor_composition():
     fa = [1,2,3]
     assert_functor_composition(f, g, fa)
 
+def test_functor_curried():
+    f = curry(fmap)
+    assert f(lambda x: x+1)([1,2,3]) == [2,3,4]
+
+def test_functor_as_func():
+    assert fmap(lambda x: x+1, [1,2,3]) == [2,3,4]
 
 ## Laws ##
 
