@@ -6,6 +6,7 @@ from pyzeta.typeclasses.semigroup import mappend
 from pyzeta.typeclasses.functor import fmap
 from pyzeta.typeclasses.applicative import app
 from pyzeta.instances.maybeapplicative import MaybeApplicative
+from pyzeta.typeclasses.monad import bind, kleisli
 
 
 ## Semigroup ##
@@ -46,11 +47,11 @@ def test_maybe_num_functor_nothing():
 ## Applicative ##
 
 def test_app_maybe_just_just():
-    r = Just(lambda x: x*2) |app| Just(2) 
+    r = Just(lambda x: x*2) |app| Just(2)
     assert r == Just(4)
 
 def test_app_maybe_nothing_just():
-    r = Nothing |app| Just(2) 
+    r = Nothing |app| Just(2)
     assert r == Nothing
 
 def test_app_maybe_just_nothing():
@@ -61,4 +62,27 @@ def test_pure():
     r = MaybeApplicative.pure(2)
     assert r == Just(2)
 
+## Monad ##
+
+def test_maybe_monad_bind():
+    f = lambda x: Just(x + 1)
+    r = Just(1) |bind| f
+    assert r == Just(2)
+
+## TODO: Hypothesis
+def test_maybe_monad_kleisli():
+    f = lambda x: Just(x + 1)
+    g = lambda x: Just(x + 2)
+    k = f |kleisli| g
+    assert k(1) == Just(4)
+
+    f = lambda x: Nothing
+    g = lambda x: Just(x + 2)
+    k = f |kleisli| g
+    assert k(1) == Nothing
+
+    f = lambda x: Just(x + 1)
+    g = lambda x: Nothing
+    k = f |kleisli| g
+    assert k(1) == Nothing
 
